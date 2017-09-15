@@ -1,15 +1,112 @@
 /*
-   statusbar-overlay sets the background color for the overlay. Black text is the default when the statusbar plugin is not added. When the
-   statusbar plugin is added, it also adds default setting to make the content white via:
 
-       <preference name="StatusBarStyle" value="lightcontent"/>
+GENERAL
 
-   Setting the background color to black will allow the default light content (white text/icons) to show on it. The statusbar plugin is included
-   in the config.xml file and will be added by the CLI when you build locally.
-
-   See https://github.com/apache/cordova-plugin-statusbar
 */
+p, div, a, h1, h2, h3{
+    font-family: 'Roboto', sans-serif;
+    color: #606060;
+}
+button{
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    color: #fff;
+    border: none;
+    border-radius: 2px
+}
+p {
+    font-size: 1.3rem;
+}
+img { 
+    width: 100%;
+}
 
-.statusbar-overlay {
-    background: #000000;
+
+button{
+    
+}
+
+.mCenter{
+    margin-right: auto;
+    margin-left: auto;
+}
+.center{
+    text-align: center;
+}
+.container{
+    padding: 10px;
+}
+.page-content{
+    padding-top: 0!important;
+}
+.color-bg.color-primary{
+    background-color: #04a9b4; 
+}
+.color-font.color-primary{
+    color: #04a9b4; 
+}
+
+.color-bg.color-secondary{
+    background-color: #ff9800; 
+}
+.color-font.color-secondary{
+    color: #ff9800; 
+}
+
+.color-bg.color-tertiary{
+    background-color: #606060; 
+}
+.color-font.color-tertiary{
+    color: #606060; 
+}
+
+
+.header-big{
+    height: 50vh;
+}
+.mosaic{
+    background-image: url('../res/img/pattern.png');
+    background-size: 100%;
+}
+.separator{
+    width: 50px;
+    height: 10px;
+    border-radius: 30px;
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.separator:after{    
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    display: block;
+    margin-left: 55px;
+    background: #04a9b4;
+}
+
+
+/*
+
+LOGIN PAGE
+
+*/
+.login .logo{
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+}
+.login .footer{
+    position: absolute;
+    bottom: 20px;
+    text-align: center;
+    margin: 0 auto;
+    width: calc(100% - 20px);
+}
+.fb{
+    background-color:#617BB6;
+    padding: 10px 20px;
+    font-weight: bold;
 }
