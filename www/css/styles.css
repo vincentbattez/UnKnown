@@ -29,11 +29,18 @@ h1{
     position: relative;
 }
 
+.white{
+    color:white;
+}
+
 .w100{
     width: 100%;
 }
 .right{
     float: right;
+}
+.left{
+    float: left;
 }
 .clearfix:after { 
    content: "."; 
@@ -73,17 +80,17 @@ h1{
 .color-bg h2 {
     color:#fff;
 }
-.color-bg.color-primary{
+.color-bg.color-finder{
     background-color: #04a9b4; 
 }
-.color-font.color-primary{
+.color-font.color-finder{
     color: #04a9b4; 
 }
 
-.color-bg.color-secondary{
+.color-bg.color-found{
     background-color: #ff9800; 
 }
-.color-font.color-secondary{
+.color-font.color-found{
     color: #ff9800; 
 }
 
@@ -136,6 +143,18 @@ h1{
     width: 25px;
     float: left;
 }
+.small-icon {
+    width: 20px;
+}
+.mr10{margin-right: 10px;}
+.ml10{margin-left: 10px;}
+.mt10{margin-top: 10px;}
+.mb10{margin-top: 10px;}
+
+.pt10{ padding-top: 10px; }
+.pb10{ padding-bottom: 10px; }
+.pr10{ padding-right: 10px; }
+.pl10{ padding-left: 10px; }
 
 .btn{
     padding: 10px 20px 10px 10px;
@@ -180,14 +199,11 @@ LOGIN PAGE
 CHOOSE CATEGORIES PAGE
 
 */
-.categorie-button{
-    position: relative;
-    width: 80px;
-    height: 105px;
-    display: inline-block;
-}
-.w100 .categorie-button{    
-    margin: 3% 6%;
+.list-categorie .categorie-button{
+    float: left;
+    width: 33%;
+    text-align: center;
+    margin: 10px 0;
 }
 .categorie-button button{
     width: 80px;
@@ -212,4 +228,109 @@ CHOOSE CATEGORIES PAGE
     display: block;
     padding-top: 5px;
     font-size: 1.2rem;
+}
+
+
+/*
+
+FAIL PAGE
+
+*/
+.center-container {
+    position: absolute;
+    top: 40px;
+    RIGHT: 0;
+    left: 0;
+    bottom: 0;
+}
+.center-content{
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+.loader {
+  color: #04a9b4;
+  font-size: 90px;
+  text-indent: -9999em;
+  overflow: hidden;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  margin: 72px auto;
+  position: relative;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: load6 1.7s infinite ease, round 1.7s infinite ease;
+  animation: load6 1.7s infinite ease, round 1.7s infinite ease;
+}
+@-webkit-keyframes load6 {
+  0% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+  5%,
+  95% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+  10%,
+  59% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
+  }
+  20% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
+  }
+  38% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
+  }
+  100% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+}
+@keyframes load6 {
+  0% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+  5%,
+  95% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+  10%,
+  59% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
+  }
+  20% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
+  }
+  38% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
+  }
+  100% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+}
+@-webkit-keyframes round {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes round {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }

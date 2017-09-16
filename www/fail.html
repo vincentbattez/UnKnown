@@ -1,0 +1,37 @@
+<!-- Views -->
+<div class="views">
+    <!-- Your main view, should have "view-main" class -->
+    <div class="view">
+        <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
+        <div class="pages">
+            <!-- Page, "data-page" contains page name -->
+            <div data-page="fail" class="page">
+                <!-- Scrollable page content -->
+                <div class="page-content">
+                    <!-- Header -->
+                    <nav class="nav color-bg color-finder pb10 pt10">
+                        <a href="./categories.html">
+                            <img src="./res/img/icons/back.svg" alt="back to categorie" class="small-icon left mr10 ml10" style="transform: rotate(180deg); ">
+                            <span>Categories</span>
+                        </a>
+                    </nav>
+                    <div class="container center-container">
+                        <!-- Music -->
+                        <div class="categorie-button right mr10 mt10" >
+                            <button class="rounded color-bg color-finder" style="width:50px; height:50px;">
+                                <img src="./res/img/icons/music.svg" alt="Music">
+                            </button>
+                        </div>
+                        <div class="center-content">
+                            <p class="white fail-message">{fail-message}</p>
+                            <a href="./categories.html">
+                                <button class="btn color-bg color-finder">Try again</button>
+                            </a>
+                        </div>
+                    </div>  <!-- .container --> 
+                </div> <!-- .page-content -->
+            </div>  <!-- .page --> 
+        </div> <!-- .pages -->
+    </div><!-- .view -->
+</div><!-- .views -->
+
