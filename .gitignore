@@ -10,4 +10,5 @@ bin/*
 plugins/*
 platforms/*
 node_modules/*
+npm-debug.log
 # End of https://www.gitignore.io/api/apachecordova

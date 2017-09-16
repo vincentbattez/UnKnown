@@ -22,11 +22,12 @@ img {
     width: 100%;
 }
 
-
-button{
-    
+h1{
+    font-weight: normal;
 }
-
+.w100{
+    width: 100%;
+}
 .mCenter{
     margin-right: auto;
     margin-left: auto;
@@ -39,6 +40,12 @@ button{
 }
 .page-content{
     padding-top: 0!important;
+}
+.color-bg p,
+.color-bg a,
+.color-bg h1,
+.color-bg h2 {
+    color:#fff;
 }
 .color-bg.color-primary{
     background-color: #04a9b4; 
@@ -64,6 +71,14 @@ button{
 
 .header-big{
     height: 50vh;
+    position: relative;
+    padding-left: 20px;
+}
+.header-big h1{
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 20px;
 }
 .mosaic{
     background-image: url('../res/img/pattern.png');
@@ -85,6 +100,9 @@ button{
     display: block;
     margin-left: 55px;
     background: #04a9b4;
+}
+.rounded{
+    border-radius: 50%;
 }
 
 
@@ -109,4 +127,33 @@ LOGIN PAGE
     background-color:#617BB6;
     padding: 10px 20px;
     font-weight: bold;
+}
+
+/*
+
+CHOOSE CATEGORIES PAGE
+
+*/
+.categorie-button{
+    position: relative;
+    width: 80px;
+    height: 105px;
+    display: inline-block;
+}
+.w100 .categorie-button{    
+    margin: 3% 6%;
+}
+.categorie-button button{
+    width: 80px;
+    height: 80px;
+}
+.categorie-button button img{
+    width: 70%;
+}
+.categorie-button span{
+    width: 100%;
+    text-align: center;
+    display: block;
+    padding-top: 5px;
+    font-size: 1.2rem;
 }
