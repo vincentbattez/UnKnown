@@ -1,14 +1,14 @@
 <!-- Views -->
 <div class="views">
     <!-- Your main view, should have "view-main" class -->
-    <div class="view view-main">
+    <div class="view">
         <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
-        <div class="pages navbar-through toolbar-through">
+        <div class="pages">
             <!-- Page, "data-page" contains page name -->
-            <div data-page="index" class="page">
+            <div data-page="categories" class="page">
                 <!-- Header -->
                 <!-- Scrollable page content -->
-                <div class="page-content login">
+                <div class="page-content">
                     <div class="header-big mosaic color-bg color-primary">
                         <h1>Choose from categories</h1>
                     </div>
@@ -53,9 +53,24 @@
                                 <span>General</span>
                             </div>
                         </div>
+                    </div>  <!-- .container --> 
+                    <!-- Slider Popup  -->
+                    <div class="slidePopup-js slidePopup">
+                        <div class="container">
+                            <p>Do you want to:</p>
+                            <div class="clearfix">
+                                <a href="found.html" class="right">
+                                    <button class="btn color-bg color-secondary"><img src="./res/img/icons/found.svg" alt="be found icon">Be found</button>
+                                </a>
+                                <a href="find.html" class="right">
+                                    <button class="btn color-bg color-primary"><img src="./res/img/icons/finder.svg" alt="finder icon">Find</button>
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+                </div> <!-- .page-content -->
+            </div>  <!-- .page --> 
+        </div> <!-- .pages -->
+    </div><!-- .view -->
+</div><!-- .views -->
+

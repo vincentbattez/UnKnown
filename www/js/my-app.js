@@ -17,27 +17,35 @@ $$(document).on('deviceready', function() {
 });
 
 
-// Now we need to run the code that will be executed only for About page.
+
+function overlayPopup() {
+    $('body').on('click', '.overlay', function () {
+        $(".overlay").fadeOut(function(){$(this).remove();});
+    });
+    $(".page-on-center .page-content").append('<div class="overlay"></div>');
+    $(".overlay").fadeIn();
+}
+
+function slidePopup(selector) {
+    $(selector).on('click', function () {
+        $('.slidePopup-js').slideDown(); // hide
+    });
+    $('body').on('click', '.overlay', function () {
+        $('.slidePopup-js').slideUp(); // show
+    });
+}
 
 // Option 1. Using page callback for page (for "about" page in this case) (recommended way):
-myApp.onPageInit('about', function (page) {
-    // Do something here for "about" page
-
+myApp.onPageInit('categories', function (page) {
+    $('.categorie-button').click(function () {
+        $('.categorie-button').removeClass('active'); // remove all class active
+        $(this).addClass('active'); // add class active
+        slidePopup('.categorie-button'); //slideUp
+        overlayPopup(); // black overlay
+        $('body').on('click', '.overlay', function () {
+            $('.categorie-button').removeClass('active'); // remove class active
+        });        
+    });
+    slidePopup('.categorie-button');
 })
 
-// Option 2. Using one 'pageInit' event handler for all pages:
-$$(document).on('pageInit', function (e) {
-    // Get page data from event data
-    var page = e.detail.page;
-
-    if (page.name === 'about') {
-        // Following code will be executed for page with data-page attribute equal to "about"
-       // myApp.alert('Here comes About page');
-    }
-})
-
-// Option 2. Using live 'pageInit' event handlers for each page
-$$(document).on('pageInit', '.page[data-page="about"]', function (e) {
-    // Following code will be executed for page with data-page attribute equal to "about"
-   // myApp.alert('Here comes About page');
-})
