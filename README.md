@@ -2,8 +2,8 @@
 
 Before programing (prompt command): 
 ```
-npm install
 git pull
+npm install
 grunt
 ```
 
@@ -11,3 +11,5 @@ Run application (prompt command):
 ```
 cordova run
 ```
+
+Code in ./www/
