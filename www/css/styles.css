@@ -3,6 +3,13 @@
 GENERAL
 
 */
+
+@font-face {
+    font-family: Roboto;
+    src: url('../res/fonts/Roboto-Regular.ttf');
+}
+
+
 p, div, a, h1, h2, h3{
     font-family: 'Roboto', sans-serif;
     color: #606060;
@@ -333,4 +340,38 @@ FAIL PAGE
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
+}
+
+
+
+/* GOOGLE MAP */
+
+#mapDiv
+{
+    width: 100%;
+    height: calc(100% - 40px);
+}
+
+#controlPanel
+{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    background-color: #fff;
+    padding: 11px;
+    box-shadow: 0px 1px 8px 0px #cdcdcd;
+}
+.controlPanel-info{
+    line-height: 43px;
+}
+.controlPanel-button{
+    padding: 10px 20px;
+}
+#directions
+{
+    float:left;
+    width:100%;
+    margin:0px;
 }
