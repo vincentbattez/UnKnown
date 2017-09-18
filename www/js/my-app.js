@@ -13,18 +13,15 @@ var mainView = myApp.addView('.view-main', {
 
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() {
-    //  window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
-  
-  var notificationOpenedCallback = function(jsonData) {
-    console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
-  };
+     // window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
+     window.plugins.PushbotsPlugin.initialize("59ba99664a9efa9c0a8b4568", {"android":{"sender_id":"759226829532"}});
+   });
 
-//   window.plugins.OneSignal
-//     .startInit("d4846f4e-f3ee-4e29-a68e-0432796aaf30")
-//     .handleNotificationOpened(notificationOpenedCallback)
-//     .endInit();
+  window.plugins.OneSignal
+    .startInit("d4846f4e-f3ee-4e29-a68e-0432796aaf30")
+    .handleNotificationOpened(notificationOpenedCallback)
+    .endInit();
 });
-
 
 
 function overlayPopup() {
