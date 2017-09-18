@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Geolocation Demo</title>
+<style>
+*
+{
+    -webkit-touch-callout: none;  /* Disable element selection in app */
+    -webkit-user-select: none;    /* Disable text selection in app */ 
+}
+
+html, 
+body, 
+#geolocationDetails 
+{
+    width:100%;
+    height:100%;
+    margin:0px;
+    padding:0px;
+}
+
+h3,
+p
+{
+    margin:5px;
+}
+
+#mapType
+{
+    position:absolute;
+    bottom:10px;
+    right:10px;
+    visibility:hidden;
+}
+</style>
+
+<!-- This is needed to access the PhoneGap JavaScript -->
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+
+<!-- Google Maps -->
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmAXZm13jr_AznNxS1dQAuwGmoBuAf4h0&callback=myMap"></script>
+
+<script>
+var currentLocationMap;
+document.addEventListener("deviceready", onDeviceReady, false);
+
+function onDeviceReady()
+{
+    // note, it takes a few seconds for the gps to work, so you need to give a high timeout value
+}
+
+    var options = {maximumAge: 1000, timeout: 50000, enableHighAccuracy: true};
+    navigator.geolocation.getCurrentPosition(onGeolocationSuccess, onGeolocationError, options);
+
+function onGeolocationSuccess(position)
+{
+    // Make the map type button visible, so that the user can change the map type	
+    document.getElementById('mapType').style.visibility = 'visible';
+
+    var latitude = position.coords.latitude;
+    var longitude = position.coords.longitude;
+
+    var mapOptions = {zoom: 15,
+        center: new google.maps.LatLng(latitude, longitude),
+        mapTypeId: google.maps.MapTypeId.ROADMAP};
+    currentLocationMap = new google.maps.Map(document.getElementById('geolocationDetails'), mapOptions);
+
+    var currentLocation = ['You are here!', latitude, longitude, 1];
+    var locationMarker;
+    var mapWindow = new google.maps.InfoWindow();
+
+    locationMarker = new google.maps.Marker({position: new google.maps.LatLng(currentLocation[1], currentLocation[2]), map: currentLocationMap});
+
+    var locationMarkerNumber = 0;
+    google.maps.event.addListener(locationMarker,
+            'click',
+            (function (locationMarker, locationMarkerNumber) {
+        return function ()
+                {
+        mapWindow.setContent(currentLocation[0]);
+                    mapWindow.open(currentLocationMap, locationMarker);
+        }
+            })(locationMarker, locationMarkerNumber));
+
+}
+
+
+function onGeolocationError(error)
+{
+    document.getElementById('geolocationDetails').innerHTML = 'code: ' + error.code + '<br>' +
+            'message: ' + error.message + '<br>';
+}
+
+
+function toggleMapType()
+{
+    if (document.getElementById('mapType').innerHTML == 'Change Map To Hybrid')
+    {
+        currentLocationMap.setMapTypeId(google.maps.MapTypeId.HYBRID);
+        document.getElementById('mapType').innerHTML = 'Change Map To Road';
+    }
+    else
+    {
+        currentLocationMap.setMapTypeId(google.maps.MapTypeId.ROADMAP);
+        document.getElementById('mapType').innerHTML = 'Change Map To Hybrid'
+    }
+}
+</script>
+</head>
+
+<body>
+<div id="geolocationDetails">
+<h3>Current Location Map Demo</h3>
+<p>loading...</p><p>It can take several seconds for the map to load. Please be patient.</p>
+</div>
+<button id = 'mapType' onclick = 'toggleMapType()'>Change Map To Hybrid</button>
+</body>
+</html>
