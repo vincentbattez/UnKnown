@@ -26,7 +26,11 @@
             "phonegap-plugin-push": {
                 "SENDER_ID": "'759226829532'"
             },
-            "pushbots-cordova-plugin": {}
+            "pushbots-cordova-plugin": {},
+            "cordova-plugin-facebook4": {
+                "APP_ID": "174795473086401",
+                "APP_NAME": "UnKnown"
+            }
         },
         "platforms": [
             "android",

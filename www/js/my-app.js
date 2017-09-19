@@ -14,6 +14,19 @@ var mainView = myApp.addView('.view-main', {
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() {
      // window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
+     function fbLoginSuccess(){
+     $("#status").html("LoggedIn");
+        }
+
+        function LoginToFB(){
+        facebookConnectPlugin.login(["public_profile"],
+	fbLoginSuccess,
+	function (error) { $("#status").html("Authentication Failed");}
+	);
+	}
+     
+     
+     //pushBots code
      window.plugins.PushbotsPlugin.initialize("59ba99664a9efa9c0a8b4568", {"android":{"sender_id":"759226829532"}});
 
   window.plugins.OneSignal
