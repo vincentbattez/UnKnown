@@ -364,7 +364,22 @@ FAIL PAGE
     box-shadow: 0px 1px 8px 0px #cdcdcd;
 }
 .controlPanel-info{
-    line-height: 43px;
+    line-height: 41px;
+}
+.duration{
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: black;
+    margin-left: 5px;
+}
+.meetingRate {
+    
+}
+.error {
+    color:#f44336;
+}
+.valid {
+    color: #08c792;
 }
 .controlPanel-button{
     padding: 10px 20px;
