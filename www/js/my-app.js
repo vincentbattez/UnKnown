@@ -15,7 +15,6 @@ var mainView = myApp.addView('.view-main', {
 $$(document).on('deviceready', function() {
      // window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
      window.plugins.PushbotsPlugin.initialize("59ba99664a9efa9c0a8b4568", {"android":{"sender_id":"759226829532"}});
-   });
 
   window.plugins.OneSignal
     .startInit("d4846f4e-f3ee-4e29-a68e-0432796aaf30")
@@ -52,19 +51,22 @@ myApp.onPageInit('categories', function (page) {
         });        
     });
     slidePopup('.categorie-button');
-});
+})
 
 
 myApp.onPageInit('loading', function (page) {
+    $(document).ready(function() {
+        StartMap(); // put : if finder find someone play this fonction
+    });
 });
 
 
 // GOOGLE MAP
-var currentLocationMap;
-var directionsDisplay;
-var directionsService;
-var latStart, lngStart;
-var start;
+var currentLocationMap,
+    directionsDisplay,
+    directionsService,
+    latStart, lngStart,
+    start;
 
 navigator.geolocation.getCurrentPosition(function (location) {
     latStart = location.coords.latitude;
@@ -115,14 +117,12 @@ function Finder() {
             street = data.results[0].formatted_address;
         }
     });
-
     // End get json parse from php
-
     var end = document.getElementById('end').value;
     var request = {
-        origin: street,
-        destination: end,
-        travelMode: google.maps.TravelMode.DRIVING
+        origin: street, // Me
+        destination: end, // be found
+        travelMode: google.maps.TravelMode.WALKING // walking travel
     };
 
     directionsService.route(request, function (response, status) {
