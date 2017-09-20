@@ -177,7 +177,44 @@ h1{
     z-index: 5000;
     display: none;
 }
+.overlay-text{
+    display: block;
+    top: -40px;
+    height: calc(100vh - 66px);
+}
+.loading-div{
+    z-index: 99999;
+    top: 0!important;
+    bottom: 65px!important;
+    background-color: rgba(3, 3, 3, 0.50);
+}
+.h100{
+    height: 100%!important;
+}
+#mapDiv{
+    transition: all 300ms;
+    filter: blur(15px);
+}
+.overlay-final{
+    display: block;
+    top: -40px;
+    height: 100vh;
+}
 
+.osef#mapDiv{
+    filter: blur(0);
+    
+}
+.card{
+    z-index: 9999;
+    position: absolute;
+    width: 80%;
+    top: 50%;
+    right: 0;
+    left: 0;
+    transform: translateY(-50%);
+    padding: 30px 30px 0px 30px;
+}
 /*
 
 LOGIN PAGE
@@ -349,7 +386,7 @@ FAIL PAGE
 #mapDiv
 {
     width: 100%;
-    height: calc(100% - 105px);
+    height: calc(100% - 65px);
 }
 
 #controlPanel
@@ -378,6 +415,9 @@ FAIL PAGE
 .error {
     color:#f44336;
 }
+.error-bg {
+    background-color:#f44336;
+}
 .valid {
     color: #08c792;
 }
@@ -389,4 +429,13 @@ FAIL PAGE
     float:left;
     width:100%;
     margin:0px;
+}
+.control-text{
+    line-height: 1.2;
+    font-size: 1.2rem;
+    position: absolute;
+    bottom: 0;
+    top: 45%;
+    transform: translateY(-50%);
+    left: 20px;
 }

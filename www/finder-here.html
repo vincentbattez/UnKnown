@@ -5,17 +5,11 @@
         <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
         <div class="pages">
             <!-- Page, "data-page" contains page name -->
-            <div data-page="fail" class="page">
+            <div data-page="finder-here" class="page">
                 <!-- Scrollable page content -->
                 <div class="page-content">
-                    <!-- Header -->
-                    <nav class="nav color-bg color-finder pb10 pt10">
-                        <a href="./categories.html">
-                            <img src="./res/img/icons/back.svg" alt="back to categorie" class="small-icon left mr10 ml10" style="transform: rotate(180deg); ">
-                            <span>Categories</span>
-                        </a>
-                    </nav>
                     <div class="container center-container">
+                        <div class="overlay overlay-text"></div>
                         <!-- Music -->
                         <div class="categorie-button right mr10 mt10" >
                             <button class="rounded color-bg color-finder" style="width:50px; height:50px;">
@@ -23,12 +17,23 @@
                             </button>
                         </div>
                         <div class="center-content">
-                            <p class="white fail-message">{fail-message}</p>
-                            <a href="./categories.html">
-                                <button class="btn color-bg color-finder">Try again</button>
-                            </a>
+                            <p>Waiting...</p>
                         </div>
+                        <div class="center-content">
+                            <div class="loader">Loading...</div>
+                        </div>                        
                     </div>  <!-- .container --> 
+                    <!-- GOOGLE MAP -->
+                    <div id="controlPanel">
+                        <span class="controlPanel-info control-text">The finder is here ! <br> to make a gesture.</span>
+                        <a href="./finder-dont.html">
+                            <button class="right error-bg controlPanel-button">Quit</button>
+                        </a>
+                        <a href="./finder-wait.html">
+                            <button class="right color-bg color-finder controlPanel-button" style="margin-right:5px;">Ok</button>
+                        </a>
+                    </div>
+                    <div class="osef" id="mapDiv"></div>
                 </div> <!-- .page-content -->
             </div>  <!-- .page --> 
         </div> <!-- .pages -->

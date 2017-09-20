@@ -5,31 +5,30 @@
         <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
         <div class="pages">
             <!-- Page, "data-page" contains page name -->
-            <div data-page="fail" class="page">
+            <div data-page="final" class="page">
                 <!-- Scrollable page content -->
                 <div class="page-content">
-                    <div class="container center-container" style="top:0px;">
+                    <div class="container center-container">
+                        <div class="overlay overlay-final"></div>
                         <!-- Music -->
                         <div class="categorie-button right mr10 mt10" >
                             <button class="rounded color-bg color-finder" style="width:50px; height:50px;">
                                 <img src="./res/img/icons/music.svg" alt="Music">
                             </button>
                         </div>
-                        <div class="center-content">
-                            <div class="card pt10 pb10">
-                                <h1>{message}</h1>
-                                <a href="./categories.html">
+                        <div class="card pt10 pb10">
+                            <h1 style="text-align:center;">Enjoy meeting !</h1>
+                            <a href="./categories.html" style="display:block; text-align:center;">
                                     <button class="btn color-bg color-finder mb10">Go to categories</button>
                                 </a>
-                                <span class="separator color-bg color-tertiary mCenter"></span>
-                                <p>
-                                    meeting : {score} () 
-                                    <br>
-                                    meeting rate : {score} () 
-                                </p>
-                            </div>
+                            <span class="separator color-bg color-tertiary mCenter"></span>
+                            <p style="text-align:center;">
+                                Successful metting : <span class="valid"> 5 <small>(+1)</small></span>
+                                <br> meeting rate : <span class="valid"> 80% <small>(10%)</small></span>
+                            </p>
                         </div>
-                    </div>  <!-- .container --> 
+                    </div>  <!-- .container --> <!-- GOOGLE MAP -->
+                    <div class="osef h100" id="mapDiv"></div>
                 </div> <!-- .page-content -->
             </div>  <!-- .page --> 
         </div> <!-- .pages -->

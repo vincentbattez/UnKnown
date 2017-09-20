@@ -5,10 +5,11 @@
         <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
         <div class="pages">
             <!-- Page, "data-page" contains page name -->
-            <div data-page="loading" class="page">
+            <div data-page="finder-wait" class="page">
                 <!-- Scrollable page content -->
                 <div class="page-content">
-                    <div class="container center-container loading-div">
+                    <div class="container center-container">
+                        <div class="overlay overlay-text"></div>
                         <!-- Music -->
                         <div class="categorie-button right mr10 mt10" >
                             <button class="rounded color-bg color-finder" style="width:50px; height:50px;">
@@ -16,7 +17,7 @@
                             </button>
                         </div>
                         <div class="center-content">
-                            <p style="color:white;">Waiting...</p>
+                            <p>Waiting...</p>
                         </div>
                         <div class="center-content">
                             <div class="loader">Loading...</div>
@@ -24,12 +25,12 @@
                     </div>  <!-- .container --> 
                     <!-- GOOGLE MAP -->
                     <div id="controlPanel">
-                        <span id="controlPanel-info" class="controlPanel-info"></span>
-                        <a href="./categories.html">
+                        <span class="controlPanel-info control-text">Waiting for the finder to <br> see your gesture.</span>
+                        <a href="./finder-dont.html">
                             <button class="right error-bg controlPanel-button">Quit</button>
                         </a>
                     </div>
-                    <div id="mapDiv"></div>
+                    <div class="osef" id="mapDiv"></div>
                 </div> <!-- .page-content -->
             </div>  <!-- .page --> 
         </div> <!-- .pages -->

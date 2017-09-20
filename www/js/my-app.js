@@ -90,7 +90,10 @@ window.FINDER;
                 for (var i = 0; i < originList.length; i++) {
                     var results = response.rows[i].elements;
                     for (var j = 0; j < results.length; j++) {
-                        $('.controlPanel-info').html('<strong class="duration">' + results[j].duration.text + ' </strong> <span class="distantion"> - ' + results[j].distance.text + '</span> <span>His/Her meeting rate: <span class="meetingRate">60</span>%</span>');
+                        $('#controlPanel-info').html('<strong class="duration">' + results[j].duration.text + ' </strong> <span class="distantion"> - ' + results[j].distance.text + '</span>');
+                        if (!FINDER) {
+                            $('#controlPanel-info').html('<span>His/Her meeting rate: <span class="meetingRate">60</span>%</span>');
+                        }
                     }
                 }
             }
@@ -119,7 +122,7 @@ window.FINDER;
             fillOpacity: 0.4
         });
         myCity.setMap(currentLocationMap);
-        $('.controlPanel-info').html('<span>His/Her meeting rate: <span class="meetingRate">70</span>%</span>');
+        $('#controlPanel-info').html('<span>His/Her meeting rate: <span class="meetingRate">70</span>%</span>');
         ratingColor();
     } // toBeFound
     function StartMap() {
@@ -171,16 +174,72 @@ window.FINDER;
         slidePopup('.categorie-button');
         $('#finder').click(function (e) {
             window.FINDER = true;
+            console.log(FINDER);
         });
         $('#found').click(function (e) {
             window.FINDER = false;
+            console.log(FINDER);
         });
-    })
+    });
     myApp.onPageInit('loading', function (page) {
         $(document).ready(function() {
             if(!FINDER)
                  $('body').find('.color-finder').removeClass('color-finder').addClass('color-found');
+            StartMap(); // TODO : if finder find someone play this fonction
+            setTimeout(function() {
+                $('#mapDiv').css({
+                    filter: 'blur(0px)'
+                });
+                $('.loading-div').fadeOut();
+            }, 3000);
+        });
+    });
+    myApp.onPageInit('finder-dont', function (page) {
+        $(document).ready(function () {
+            if (!FINDER)
+                $('body').find('.color-finder').removeClass('color-finder').addClass('color-found');
+            $('#mapDiv').remove();
+            StartMap(); // TODO : if finder find someone play this fonction
+        });
+    });
+    myApp.onPageInit('final', function (page) {
+        $(document).ready(function () {
+            if (!FINDER)
+                $('body').find('.color-finder').removeClass('color-finder').addClass('color-found');
+            $('#mapDiv').remove();
+            StartMap(); // TODO : if finder find someone play this fonction
+        });
+    });
+    myApp.onPageInit('found-here', function (page) {
+            StartMap(); // TODO : if finder find someone play this fonction
+            
+    });
+    myApp.onPageInit('finder-here', function (page) {
+            StartMap(); // TODO : if finder find someone play this fonction
 
+    });
+
+    myApp.onPageInit('found-gesture', function (page) {
+        $(document).ready(function () {
+            if (!FINDER)
+                $('body').find('.color-finder').removeClass('color-finder').addClass('color-found');
+            $('#mapDiv').remove();
+            StartMap(); // TODO : if finder find someone play this fonction
+        });
+    });
+    myApp.onPageInit('finder-wait', function (page) {
+        $(document).ready(function () {
+            if (!FINDER)
+                $('body').find('.color-finder').removeClass('color-finder').addClass('color-found');
+            $('#mapDiv').remove();
+            StartMap(); // TODO : if finder find someone play this fonction
+        });
+    });
+    myApp.onPageInit('found-again', function (page) {
+        $(document).ready(function () {
+            if (!FINDER)
+                $('body').find('.color-finder').removeClass('color-finder').addClass('color-found');
+            $('#mapDiv').remove();
             StartMap(); // TODO : if finder find someone play this fonction
         });
     });
